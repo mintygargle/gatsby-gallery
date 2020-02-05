@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Link } from "gatsby"
 import { Menu, Grid } from 'semantic-ui-react'
 import "./layout.scss"
 
@@ -9,7 +10,7 @@ const Layout = ({ children }) => {
     <div className="app">
       {/* Top Menu */}
       <Menu fixed='top' inverted>
-        <Menu.Item as='a' href="/" header>
+        <Menu.Item as={Link} to="/" header>
           Business Name
         </Menu.Item>
         <Menu.Menu position='right'>
@@ -25,9 +26,9 @@ const Layout = ({ children }) => {
           <Grid.Column mobile={4} computer={2}>
             {/* Sidebar Menu */}
             <Menu pointing secondary vertical>
-              <Menu.Item name='Overview' active />
-              <Menu.Item name='Animals' />
-              <Menu.Item name='Landscapes' />
+              <Menu.Item name='Overview' active as={Link} to="/" />
+              <Menu.Item name='Animals' as={Link} to="/animals" />
+              <Menu.Item name='Landscapes' as={Link} to="/landscapes" />
             </Menu>
             {/* End of Sidebar Menu */}
           </Grid.Column>
