@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
           <Grid.Column width={4}>
             {/* Sidebar Menu */}
             <Menu pointing secondary vertical>
-              <Menu.Item name='home' active />
+              <Menu.Item name='Overview' active />
               <Menu.Item name='Animals' />
               <Menu.Item name='Landscapes' />
             </Menu>
