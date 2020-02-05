@@ -4,10 +4,10 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Overview" />
-    <p>Overview Photos</p>
-  </Layout>
+    <Layout>
+        <SEO title="Landscapes" />
+        <p>Landscape Photos</p>
+    </Layout>
 )
 
 export default IndexPage
