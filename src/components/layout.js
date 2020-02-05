@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
 
       <Grid style={{ marginTop: '1em' }}>
         <Grid.Row>
-          <Grid.Column width={4}>
+          <Grid.Column mobile={4} computer={2}>
             {/* Sidebar Menu */}
             <Menu pointing secondary vertical>
               <Menu.Item name='Overview' active />
@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
             </Menu>
             {/* End of Sidebar Menu */}
           </Grid.Column>
-          <Grid.Column width={12}>
+          <Grid.Column mobile={12} computer={14}>
             {/* Page Content */}
             <main>{children}</main>
           </Grid.Column>
