@@ -4,6 +4,8 @@ import { Link } from "gatsby"
 import { Menu, Grid } from 'semantic-ui-react'
 import "./layout.scss"
 
+import SideMenu from "./sidemenu";
+
 const Layout = ({ children }) => {
 
   return (
@@ -22,22 +24,12 @@ const Layout = ({ children }) => {
       {/* End of Top Menu */}
 
       <Grid style={{ marginTop: '1em' }}>
-        <Grid.Row>
-          <Grid.Column mobile={4} computer={2}>
-            {/* Sidebar Menu */}
-            <Menu pointing secondary vertical>
-              <Menu.Item name='Overview' active as={Link} to="/" />
-              <Menu.Item name='Animals' as={Link} to="/animals" />
-              <Menu.Item name='Landscapes' as={Link} to="/landscapes" />
-            </Menu>
-            {/* End of Sidebar Menu */}
-          </Grid.Column>
-          <Grid.Column mobile={12} computer={14}>
-            {/* Page Content */}
-            <main>{children}</main>
-          </Grid.Column>
-          {/* End of Page Content */}
-        </Grid.Row>
+        <Grid.Column width={4}>
+          <SideMenu />
+        </Grid.Column>
+        <Grid.Column width={12}>
+          <main>{children}</main>
+        </Grid.Column>
       </Grid>
     </div>
   )
