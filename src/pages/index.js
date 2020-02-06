@@ -57,8 +57,7 @@ export default IndexPage
 
 export const query = graphql`
   query AllImagesQuery {
-    allStrapiImage {
-      edges {
+    allStrapiImage(filter: {tags: {elemMatch: {name: {eq: "Favorites"}}}}) {edges {
         node {
           id
           title
