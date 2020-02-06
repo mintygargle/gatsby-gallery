@@ -4,7 +4,7 @@ import { Menu } from 'semantic-ui-react'
 
 export default function SideMenu() {
   return (
-    <Menu pointing secondary vertical >
+    <Menu pointing secondary vertical>
       <Menu.Item
         name='Overview'
         as={Link}
