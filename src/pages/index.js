@@ -4,17 +4,11 @@ import { graphql } from 'gatsby';
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import LightboxGallery from "../components/lightbox-gallery";
+import LightboxGallery, { photoMapper } from "../components/lightbox-gallery";
 
 const IndexPage = ({ data }) => {
   const { edges } = data.allStrapiImage;
-  const photos = edges.map(document => (
-    {
-      src: document.node.url.childImageSharp.fluid.src,
-      width: 4,
-      height: 3
-    }
-  ));
+  const photos = photoMapper(edges);
 
   return (
     <Layout>
@@ -35,8 +29,8 @@ export const query = graphql`
           title
           url {
             childImageSharp {
-              fluid(maxWidth: 960) {
-              ...GatsbyImageSharpFluid
+              fixed(width: 960) {
+              ...GatsbyImageSharpFixed
               }
             }
           }
