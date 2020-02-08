@@ -23,7 +23,10 @@ export default LandscapePage
 
 export const query = graphql`
   query LandscapeImagesQuery {
-    allStrapiImage(filter: {tags: {elemMatch: {name: {eq: "Landscape"}}}}) {edges {
+    allStrapiImage(
+      filter: { tags: { elemMatch: { name: { eq: "Landscape" } } } }
+    ) {
+      edges {
         node {
           id
           title
@@ -38,4 +41,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

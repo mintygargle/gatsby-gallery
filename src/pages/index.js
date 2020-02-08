@@ -23,14 +23,17 @@ export default IndexPage
 
 export const query = graphql`
   query AllImagesQuery {
-    allStrapiImage(filter: {tags: {elemMatch: {name: {eq: "Favorites"}}}}) {edges {
+    allStrapiImage(
+      filter: { tags: { elemMatch: { name: { eq: "Favorites" } } } }
+    ) {
+      edges {
         node {
           id
           title
           url {
             childImageSharp {
               fixed(width: 960) {
-              ...GatsbyImageSharpFixed
+                ...GatsbyImageSharpFixed
               }
             }
           }
@@ -38,4 +41,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

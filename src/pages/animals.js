@@ -23,7 +23,10 @@ export default AnimalsPage
 
 export const query = graphql`
   query AnimalsImagesQuery {
-    allStrapiImage(filter: {tags: {elemMatch: {name: {eq: "Animal"}}}}) {edges {
+    allStrapiImage(
+      filter: { tags: { elemMatch: { name: { eq: "Animal" } } } }
+    ) {
+      edges {
         node {
           id
           title
@@ -38,4 +41,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
